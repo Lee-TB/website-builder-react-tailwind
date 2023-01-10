@@ -19,7 +19,7 @@ import {
 import { RiLayoutMasonryFill } from 'react-icons/ri';
 import { IoIosColorPalette, IoMdSettings, IoIosAlert } from 'react-icons/io';
 import { GoChevronLeft } from 'react-icons/go';
-import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
+import { BiChevronDown } from 'react-icons/bi';
 import { AiFillEye } from 'react-icons/ai';
 import { SiWebpack } from 'react-icons/si';
 import { HiUserGroup } from 'react-icons/hi';
@@ -35,6 +35,7 @@ function App() {
             <img src={logo} alt="Logo" className="block" />
           </a>
         </div>
+
         <nav className="flex flex-1 flex-col gap-y-4 pt-10">
           <a
             href="#"
@@ -101,6 +102,7 @@ function App() {
           </button>
         </div>
       </aside>
+
       <div className="flex h-screen flex-1 flex-col">
         <header className="flex h-18 items-center justify-center gap-x-4 border-b border-gray-200 bg-white px-6">
           <button className="group flex items-center justify-center rounded-xl bg-gray-100 p-3 focus:ring focus:ring-gray-200">
@@ -148,7 +150,7 @@ function App() {
           </button>
         </header>
       </div>
-      <aside className="flex h-screen w-[300px] flex-col border-l border-gray-200 bg-white">
+      <aside className="flex min-h-screen w-[300px] flex-col border-l border-gray-200 bg-white">
         <div className="flex h-18 items-center justify-between gap-x-4 border-b border-gray-200 px-4 font-semibold">
           <button className="group flex items-center gap-x-2 rounded-xl bg-gray-100 p-3 focus:ring focus:ring-gray-200">
             <HiUserGroup className="text-gray-400 group-hover:text-blue-500" />
@@ -181,7 +183,7 @@ function App() {
             <span className="text-sm font-semibold text-gray-400">1 on this page, 7 on other pages.</span>
           </div>
           <Accordion title="Layout">
-            <div className="flex justify-between border-b border-gray-200 p-4">
+            <div className="flex justify-between border-gray-200">
               <button className="rounded-lg border-2 bg-white p-1">
                 <MdAlignHorizontalLeft className="text-2xl text-gray-400" />
               </button>
@@ -202,8 +204,113 @@ function App() {
               </button>
             </div>
           </Accordion>
-          <Accordion title="Spacing"></Accordion>
-          <Accordion title="Size"></Accordion>
+          <Accordion title="Spacing">
+            <div className="relative flex items-center justify-center rounded-xl border-2 border-dashed border-gray-200 px-12 py-10">
+              <span className="absolute top-2 left-2 text-sm font-medium uppercase text-gray-400">margin</span>
+              <div className="relative w-full">
+                <span className="absolute bottom-2 right-2 text-sm font-medium uppercase text-gray-400">padding</span>
+                <div className="absolute inset-x-0 top-0 flex -translate-y-1/2 flex-col items-center justify-center gap-1 text-sm font-medium">
+                  <input type="text" defaultValue={20} className="h-4 w-5 text-center outline-none " />
+                  <div className="h-2 w-2 border-2 border-blue-500 bg-white"></div>
+                  <input type="text" defaultValue={0} className="h-4 w-5 text-center outline-none " />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 flex translate-y-1/2 flex-col items-center justify-center gap-1 text-sm font-medium">
+                  <input type="text" defaultValue={0} className="h-4 w-5 text-center outline-none " />
+                  <div className="h-2 w-2 border-2 border-blue-500 bg-white"></div>
+                  <input type="text" defaultValue={20} className="h-4 w-5 text-center outline-none " />
+                </div>
+                <div className="absolute inset-y-0 left-0 flex -translate-x-1/2 items-center gap-1 text-sm font-medium">
+                  <input type="text" defaultValue={0} className="h-4 w-5 text-center outline-none " />
+                  <div className="h-2 w-2 border-2 border-blue-500 bg-white"></div>
+                  <input type="text" defaultValue={0} className="h-4 w-5 text-center outline-none " />
+                </div>
+                <div className="absolute inset-y-0 right-0 flex translate-x-1/2 items-center gap-1 text-sm font-medium">
+                  <input type="text" defaultValue={0} className="h-4 w-5 text-center outline-none " />
+                  <div className="h-2 w-2 border-2 border-blue-500 bg-white"></div>
+                  <input type="text" defaultValue={0} className="h-4 w-5 text-center outline-none " />
+                </div>
+
+                <div className="h-24 w-full rounded-xl border-2 border-blue-500 px-10 py-8">
+                  <div className="h-full w-full rounded bg-gray-200"></div>
+                </div>
+              </div>
+            </div>
+          </Accordion>
+          <Accordion title="Size">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative">
+                <div className="absolute inset-y-0 flex items-center pl-2">
+                  <span className="pointer-events-none select-none text-sm font-medium text-gray-400">W</span>
+                </div>
+                <input
+                  type="text"
+                  defaultValue="Auto"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-right text-sm font-semibold outline-none"
+                />
+              </div>
+              <div className="relative">
+                <div className="absolute inset-y-0 flex items-center pl-2">
+                  <span className="pointer-events-none select-none text-sm font-medium text-gray-400">H</span>
+                </div>
+                <input
+                  type="text"
+                  defaultValue="Auto"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-right text-sm font-semibold outline-none"
+                />
+              </div>
+              <div className="relative">
+                <div className="absolute inset-y-0 flex items-center pl-2">
+                  <span className="pointer-events-none select-none text-sm font-medium text-gray-400">Max-W</span>
+                </div>
+                <input
+                  type="text"
+                  defaultValue="Auto"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-right text-sm font-semibold outline-none"
+                />
+              </div>
+              <div className="relative">
+                <div className="absolute inset-y-0 flex items-center pl-2">
+                  <span className="pointer-events-none select-none text-sm font-medium text-gray-400">Max-H</span>
+                </div>
+                <input
+                  type="text"
+                  defaultValue="Auto"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-right text-sm font-semibold outline-none"
+                />
+              </div>
+              <div className="relative">
+                <div className="absolute inset-y-0 flex items-center pl-2">
+                  <span className="pointer-events-none select-none text-sm font-medium text-gray-400">Min-W</span>
+                </div>
+                <input
+                  type="text"
+                  defaultValue="Auto"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-right text-sm font-semibold outline-none"
+                />
+              </div>
+              <div className="relative">
+                <div className="absolute inset-y-0 flex items-center pl-2">
+                  <span className="pointer-events-none select-none text-sm font-medium text-gray-400">Min-H</span>
+                </div>
+                <input
+                  type="text"
+                  defaultValue="Auto"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-right text-sm font-semibold outline-none"
+                />
+              </div>
+
+              <div className="col-span-2">
+                <div className="relative flex gap-x-5 rounded-xl border bg-gray-50 p-2 text-sm font-medium">
+                  <span className="select-none text-gray-400">Overflow</span>
+                  <div className="flex items-center gap-x-1">
+                    <AiFillEye className="text-lg text-gray-400 " />
+                    <span>Invisible</span>
+                  </div>
+                  <BiChevronDown className="absolute right-1 text-xl text-gray-400" />
+                </div>
+              </div>
+            </div>
+          </Accordion>
           <Accordion title="Typography"></Accordion>
           <Accordion title="Position"></Accordion>
           <Accordion title="Border"></Accordion>
