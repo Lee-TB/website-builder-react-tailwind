@@ -1,5 +1,8 @@
 import logo from '~/assets/images/logo.svg';
 import avatar from '~/assets/images/avatar.svg';
+import webLogo from '~/assets/images/logo.png';
+import billy from '~/assets/images/billy.png';
+import alphaPay from '~/assets/images/alpha-pay.png';
 import {
   BsFillPlusSquareFill,
   BsFillImageFill,
@@ -25,6 +28,7 @@ import { SiWebpack } from 'react-icons/si';
 import { HiUserGroup } from 'react-icons/hi';
 import Tooltip from './components/Tooltip';
 import Accordion from './components/Accordion';
+import EditArea from './components/EditArea';
 
 function App() {
   return (
@@ -149,14 +153,98 @@ function App() {
             <SiWebpack className="h-6 w-6 text-gray-400 group-hover:text-blue-500" />
           </button>
         </header>
+        <main className="flex-1 overflow-y-scroll">
+          <div className="m-12 bg-white">
+            <nav className="flex border-b py-4 px-8">
+              <img src={webLogo} alt="" className="h-11 w-11" />
+              <div className="ml-auto flex items-center gap-x-4">
+                <ul className="flex items-center gap-x-4">
+                  <li>
+                    <a href="#" className="font-bold capitalize text-gray-900">
+                      <EditArea>projects</EditArea>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="font-bold capitalize text-gray-900">
+                      <EditArea>services</EditArea>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="font-bold capitalize text-gray-900">
+                      <EditArea>the team</EditArea>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="font-bold capitalize text-gray-900">
+                      <EditArea>insight</EditArea>
+                    </a>
+                  </li>
+                </ul>
+                <button className="rounded-full bg-blue-600 px-8 py-3 font-medium text-white">
+                  <EditArea>Hire us</EditArea>
+                </button>
+              </div>
+            </nav>
+            <section className="bg-white py-16 px-12">
+              <div className="flex flex-col gap-y-8">
+                <EditArea title="H1 - hero_title">
+                  <h2 className="text-6xl font-bold">We craft digital products for bussiness and user goals.</h2>
+                </EditArea>
+                <EditArea title="Paragraph">
+                  <p className="w-5/6 text-xl text-gray-400">
+                    Help find solutions with UI/UX designs that are intuitive and in accordance with client bussiness
+                    goals. We provide a high-quality service in UI/UX Design & Development.
+                  </p>
+                </EditArea>
+                <div className="flex gap-x-4">
+                  <div className="rounded-full bg-blue-600 py-4 px-8 text-sm font-medium text-white">
+                    <EditArea title={'btn-text1'}>Let's work together</EditArea>
+                  </div>
+                  <div className="rounded-full border py-4 px-8 text-sm font-medium text-blue-600">
+                    <EditArea title={'btn-text2'}>Check our work</EditArea>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section className="bg-white py-16 px-12">
+              <div>
+                <h2 className="mb-4 text-3xl font-bold">
+                  <EditArea title={'heading1'}>Our Projects</EditArea>
+                </h2>
+                <div className="flex gap-x-12">
+                  <figure>
+                    <img
+                      src={billy}
+                      alt="billy project"
+                      className="aspect-square rounded-xl rounded-xl object-cover shadow-md"
+                    />
+                    <figcaption className="mt-2 font-medium">
+                      <EditArea>Billy</EditArea>
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <img
+                      src={alphaPay}
+                      alt="alpha-pay project"
+                      className="aspect-square rounded-xl rounded-xl object-cover shadow-md"
+                    />
+                    <figcaption className="mt-2 font-medium">
+                      <EditArea>AlphaPay</EditArea>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
       </div>
       <aside className="flex min-h-screen w-[300px] flex-col border-l border-gray-200 bg-white">
         <div className="flex h-18 items-center justify-between gap-x-4 border-b border-gray-200 px-4 font-semibold">
-          <button className="group flex items-center gap-x-2 rounded-xl bg-gray-100 p-3 focus:ring focus:ring-gray-200">
+          <button className="group flex flex-1 items-center gap-x-2 rounded-xl bg-gray-100 p-3 focus:ring focus:ring-gray-200">
             <HiUserGroup className="text-gray-400 group-hover:text-blue-500" />
             <span className="text-sm font-bold group-hover:text-blue-500">Invite</span>
           </button>
-          <button className="flex items-center justify-center rounded-xl bg-blue-500 px-8 py-3 text-sm font-bold text-white focus:ring focus:ring-blue-200">
+          <button className="flex flex-1 items-center justify-center rounded-xl bg-blue-500 px-8 py-3 text-sm font-bold text-white focus:ring focus:ring-blue-200">
             Publish
           </button>
         </div>
